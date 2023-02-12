@@ -1,23 +1,29 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println(shouldWakeUp(true, 0));
-    }
+        System.out.println(hasTeen(9, 99,19));
+        System.out.println(isTeen(13));
+      }
+
     /*
-    * We have a dog that likes to bark.
-    * We need to wake up if the dog is barking at night!
-    * Write a method shouldWakeUp that has 2 parameters.
-    * 1st parameter should be of type boolean and be named barking it represents if our dog is currently barking.
-    * 2nd parameter represents the hour of the day and is of type int with the name hourOfDay and has a valid range of 0-23.
-    * We have to wake up if the dog is barking before 8 or after 22 hours so in that case return true.
+     * The method should return boolean, and it needs to return true if one of the parameters is in range 13(inclusive) - 19 (inclusive). Otherwise return false.
+     */
+
+    /*
+    * Write another method named isTeen with 1 parameter of type int.
+    * The method should return boolean and it needs to return true if the parameter is in range 13(inclusive) - 19 (inclusive). Otherwise return false.
     */
-    public static boolean shouldWakeUp(boolean barking, int hourOfDay){
-        if(barking){
-            //check time is of valid range of 0-23
-            if(hourOfDay >= 0 && hourOfDay <= 23) {
-                //check if we should make the dog stop barking
-                return (hourOfDay < 8 || hourOfDay > 22) ? true : false;
+
+    public static boolean hasTeen(int numberOne, int numberTwo, int numberThree) {
+        int[] numberArray = {numberOne,numberTwo,numberThree};
+        for(int i =0; i<numberArray.length; i++){
+            if(numberArray[i] > 12 && numberArray[i] < 20){
+                return true;
             }
         }
         return false;
+    }
+
+    public static boolean isTeen(int numberOne){
+        return (numberOne > 12 && numberOne < 20);
     }
 }
