@@ -1,29 +1,18 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println(hasTeen(9, 99,19));
-        System.out.println(isTeen(13));
-      }
-
-    /*
-     * The method should return boolean, and it needs to return true if one of the parameters is in range 13(inclusive) - 19 (inclusive). Otherwise return false.
-     */
-
-    /*
-    * Write another method named isTeen with 1 parameter of type int.
-    * The method should return boolean and it needs to return true if the parameter is in range 13(inclusive) - 19 (inclusive). Otherwise return false.
-    */
-
-    public static boolean hasTeen(int numberOne, int numberTwo, int numberThree) {
-        int[] numberArray = {numberOne,numberTwo,numberThree};
-        for(int i =0; i<numberArray.length; i++){
-            if(numberArray[i] > 12 && numberArray[i] < 20){
-                return true;
-            }
-        }
-        return false;
+        printEqual(1, 1, 3);
     }
 
-    public static boolean isTeen(int numberOne){
-        return (numberOne > 12 && numberOne < 20);
+    /*
+    Write a method printEqual with 3 parameters of type int. The method should not return anything (void).
+    If one of the parameters is less than 0, print text "Invalid Value".
+    If all numbers are equal print text "All numbers are equal"
+    If all numbers are different print text "All numbers are different".
+
+    Otherwise, print "Neither all are equal or different".
+    */
+
+    public static void printEqual(int x, int y, int z) {
+        System.out.println((x < 0 || y < 0 || z < 0 ? "Invalid Value" : x == y && y == z ? "All numbers are equal" : x != y && y != z && x != z  ? "All numbers are different" : "Neither all are equal or different"));
     }
 }
