@@ -1,29 +1,21 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println(hasTeen(9, 99,19));
-        System.out.println(isTeen(13));
-      }
-
-    /*
-     * The method should return boolean, and it needs to return true if one of the parameters is in range 13(inclusive) - 19 (inclusive). Otherwise return false.
-     */
-
-    /*
-    * Write another method named isTeen with 1 parameter of type int.
-    * The method should return boolean and it needs to return true if the parameter is in range 13(inclusive) - 19 (inclusive). Otherwise return false.
-    */
-
-    public static boolean hasTeen(int numberOne, int numberTwo, int numberThree) {
-        int[] numberArray = {numberOne,numberTwo,numberThree};
-        for(int i =0; i<numberArray.length; i++){
-            if(numberArray[i] > 12 && numberArray[i] < 20){
-                return true;
-            }
-        }
-        return false;
+        printYearsAndDays(561600);
     }
 
-    public static boolean isTeen(int numberOne){
-        return (numberOne > 12 && numberOne < 20);
+    /*
+    Write a method printYearsAndDays with parameter of type long named minutes.
+    The method should not return anything (void) and it needs to calculate the years and days from the minutes parameter.
+
+    If the parameter is less than 0, print text "Invalid Value".
+    Otherwise, if the parameter is valid then it needs to print a message in the format "XX min = YY y and ZZ d".
+
+    XX represents the original value minutes.
+    YY represents the calculated years.
+    ZZ represents the calculated days.
+    */
+
+    public static void printYearsAndDays(long minutes) {
+        System.out.println(minutes < 0 ? "Invalid Value" : (minutes + " min = " + (minutes / 525600) + " y and " + ((minutes / 14400) > 365 ? 0 : (((minutes - ((minutes / 525600) * 525600)) / 1440))) + " d"));
     }
 }
