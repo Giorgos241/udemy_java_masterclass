@@ -1,18 +1,21 @@
 public class Main {
     public static void main(String[] args) {
-        printEqual(1, 1, 3);
+        System.out.println(isCatPlaying(true, 40));
     }
 
     /*
-    Write a method printEqual with 3 parameters of type int. The method should not return anything (void).
-    If one of the parameters is less than 0, print text "Invalid Value".
-    If all numbers are equal print text "All numbers are equal"
-    If all numbers are different print text "All numbers are different".
+    The cats spend most of the day playing.
+    In particular, they play if the temperature is between 25 and 35 (inclusive).
+    Unless it is summer, then the upper limit is 45 (inclusive) instead of 35.
 
-    Otherwise, print "Neither all are equal or different".
+    Write a method isCatPlaying that has 2 parameters.
+    Method needs to return true if the cat is playing, otherwise return false
+
+    1st parameter should be of type boolean and be named summer it represents if it is summer.
+    2nd parameter represents the temperature and is of type int with the name temperature.
     */
 
-    public static void printEqual(int x, int y, int z) {
-        System.out.println((x < 0 || y < 0 || z < 0 ? "Invalid Value" : x == y && y == z ? "All numbers are equal" : x != y && y != z && x != z  ? "All numbers are different" : "Neither all are equal or different"));
+    public static boolean isCatPlaying(boolean summer, int temperature) {
+        return ((!summer ? ((temperature > 24 && temperature < 36) ? true : false) : ((temperature > 24 && temperature < 46) ? true : false)));
     }
 }
